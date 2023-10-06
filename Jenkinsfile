@@ -13,6 +13,8 @@ pipeline {
                             }
                         }
                 }
+            }
+        } 
         stage('Stage 2') {
             steps {
                 echo 'pyhton thing'
@@ -23,4 +25,7 @@ pipeline {
             }
         }
     }
+}
+}
+}
 }
