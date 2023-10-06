@@ -5,10 +5,10 @@ pipeline {
             steps {
                 echo 'Create Container Image..'
         
-                script {
+            
                         echo 'Hello world!'
                         echo '3'
-                            }
+                            
                         }
                 }
             
@@ -16,9 +16,9 @@ pipeline {
         stage('Stage 2') {
             steps {
                 echo 'pyhton thing'
-                script {
+        
                         sh 'python3 test-python.py'
-            }
+            
         }
     }
 }
