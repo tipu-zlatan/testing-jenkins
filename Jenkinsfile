@@ -6,6 +6,10 @@ pipeline {
                 echo 'Hello world!'
                 echo '3'
             }
+            stage('Stage 1') {
+            steps {
+                python3 test-python.py
+            }
         }
     }
 }
