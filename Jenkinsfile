@@ -3,13 +3,23 @@ pipeline {
     stages {
         stage('Stage 1') {
             steps {
-                echo 'Hello world!'
-                echo '3'
-            }
-        }
+                echo 'Create Container Image..'
+        
+                script {
+                  openshift.withCluster() {
+                    openshift.withProject("testing-jenkins") {
+                        echo 'Hello world!'
+                        echo '3'
+                            }
+                        }
+                }
         stage('Stage 2') {
             steps {
-                sh 'python3 test-python.py'
+                echo 'pyhton thing'
+                script {
+                  openshift.withCluster() {
+                    openshift.withProject("testing-jenkins") {
+                        sh 'python3 test-python.py'
             }
         }
     }
